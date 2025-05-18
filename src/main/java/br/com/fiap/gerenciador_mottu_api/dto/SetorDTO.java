@@ -27,3 +27,5 @@ public class SetorDTO {
     @NotNull(message = "O ID do pátio é obrigatório")
     private Long patioId;
 }
+
+
