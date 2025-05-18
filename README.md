@@ -21,8 +21,6 @@ Sistema RESTful desenvolvido com Spring Boot para gerenciar o fluxo de **motos e
 - H2 Database (em memória)
 - Lombok
 - DTOs
-- OpenAPI (Swagger)
-
 ---
 
 ## 📦 Entidades e Relacionamentos
