@@ -41,9 +41,9 @@ public class MotoController {
                 .build();
         return ResponseEntity.status(HttpStatus.CREATED).body(motoDTO);
     }
-
-    @PostMapping("/saida/{id}")
-    public ResponseEntity<MotoDTO> saida(@PathVariable Long id) {
+    //ajustar para path
+        @PatchMapping("/saida/{id}")
+        public ResponseEntity<MotoDTO> saida(@PathVariable Long id) {
         Moto saida = motoService.registrarSaida(id);
         MotoDTO motoDTO = MotoDTO.builder()
                 .id(saida.getId())
@@ -54,9 +54,8 @@ public class MotoController {
                 .setorId(saida.getSetor().getId())
                 .build();
         return ResponseEntity.ok(motoDTO);
-    }
-
-    @Cacheable("motosAtivas")
+        }
+    @Cacheable("motosAtivas") // tirar cache dos endpoints da moto
     @GetMapping("/ativas")
     public Page<MotoDTO> ativas(
             @PageableDefault(size = 10, sort = "dataEntrada", direction = Direction.DESC) Pageable pageable) {

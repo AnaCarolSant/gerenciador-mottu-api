@@ -21,13 +21,7 @@ public class MotoService {
     }
 
     public Moto registrarEntrada(MotoDTO dto) {
-        if (motoRepo.findByIotIdentificadorAndDataSaidaIsNull(dto.getIotIdentificador()).isPresent()) {
-            throw new RuntimeException("Moto já está no pátio");
-        }
 
-        if (dto.getSetorId() == null) {
-            throw new RuntimeException("Setor é obrigatório");
-        }
 
         Setor setor = setorRepo.findById(dto.getSetorId())
             .orElseThrow(() -> new RuntimeException("Setor inválido"));
@@ -62,7 +56,7 @@ public class MotoService {
         return motoRepo.save(moto);
     }
 
-    // Atualizar Moto
+
     public Moto atualizar(Long id, MotoDTO dto) {
         Moto moto = motoRepo.findById(id)
             .orElseThrow(() -> new RuntimeException("Moto não encontrada"));
@@ -74,7 +68,7 @@ public class MotoService {
         return motoRepo.save(moto);
     }
 
-    // Deletar Moto
+
     public void deletar(Long id) {
         motoRepo.deleteById(id);
     }

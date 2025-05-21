@@ -2,7 +2,6 @@ package br.com.fiap.gerenciador_mottu_api.model;
 
 import java.time.LocalDateTime;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
