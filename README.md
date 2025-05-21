@@ -165,9 +165,9 @@ GET http://localhost:8080/motos/1
 
 ### ✏️ Registrar saída da moto
 ```http
-PUT http://localhost:8080/motos/saida/4
+PATH http://localhost:8080/motos/saida/4
 ```
-> **Nota:** Para o endpoint de saída (`PUT /motos/saida/{id}`), não é necessário enviar corpo na requisição. A saída será registrada no momento da chamada.
+> **Nota:** O ID da moto é passado como path parameter (`PATH /motos/saida/{id}`), não é necessário enviar corpo na requisição. A saída será registrada no momento da chamada.
 
 ### 🟢 Listar motos ativas (no pátio)
 ```http
