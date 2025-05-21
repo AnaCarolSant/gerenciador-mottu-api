@@ -55,7 +55,7 @@ public class MotoController {
                 .build();
         return ResponseEntity.ok(motoDTO);
         }
-    @Cacheable("motosAtivas") // tirar cache dos endpoints da moto
+
     @GetMapping("/ativas")
     public Page<MotoDTO> ativas(
             @PageableDefault(size = 10, sort = "dataEntrada", direction = Direction.DESC) Pageable pageable) {
@@ -70,7 +70,6 @@ public class MotoController {
                         .build());
     }
 
-    @Cacheable("motosTodas")
     @GetMapping
     public Page<MotoDTO> todas(
             @PageableDefault(size = 10, sort = "dataEntrada", direction = Direction.DESC) Pageable pageable) {
